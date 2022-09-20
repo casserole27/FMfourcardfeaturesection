@@ -45,6 +45,17 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## My process
 
+Setup HTML file 
+- insert my personal comment credit
+- <head> tag includes stylesheet/link and fonts, double check for meta viewport tag
+- initial semantic, accessible markup: placing main, heading and paragraph tags
+Setup CSS file
+- insert my personal comment credit
+- copy style guide into file as comments
+- decide on mobile or desktop-first design based on design file examples
+- create *, root, and body selectors: margin/padding to 0, setup for variables, add font-family
+
+
 ### Built with
 
 - Semantic HTML5 markup
