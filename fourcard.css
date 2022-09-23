@@ -12,9 +12,17 @@ September 2022
 }
 
 :root {
-   /* EXAMPLE --very-dark-magenta: hsl(300, 43%, 22%); */
-    --br: border-radius: 1rem; 
-    --font-size: font-size: 15px; 
+--primary-red: hsl(0, 78%, 62%);
+--primary-cyan: hsl(180, 62%, 55%);
+--primary-orange: hsl(34, 97%, 64%);
+--primary-blue: hsl(212, 86%, 64%);
+
+--neutral-very-dark-blue: hsl(234, 12%, 34%);
+--neutral-grayish-blue: hsl(229, 6%, 66%);
+--neutral-very-light-gray: hsl(0, 0%, 98%);
+
+--br: border-radius: 1rem; 
+--font-size: font-size: 15px; 
 }
 
 /****** MOBILE-FIRST DESIGN ******/
@@ -22,9 +30,75 @@ September 2022
 
 body {
     font-family: 'Poppins', sans-serif;
+    padding: 2rem;
+    margin-top: 5.3125rem;
+    width: 375px;
+    border: solid .25rem limegreen;
+    margin: 0 auto;
 }
 
+.headline-wrapper {
+    /*width: 311px;
+    height: 161px;*/
+}
 
+h1 {
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: var(--neutral-grayish-blue);
+    text-align: center;
+    line-height: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--neutral-very-dark-blue);
+    text-align: center;
+    line-height: 2rem;
+}
+
+.description {
+    font-size: .9375rem;
+    font-weight: 400;
+    color: var(--neutral-grayish-blue);
+    text-align: center;
+    line-height: 1.5625rem;
+    padding-top: 1rem;
+    padding-bottom: 4.75rem;
+}
+
+h3 {
+    padding-top: 1.6875rem;
+    padding-left: 1.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--neutral-very-dark-blue);
+    line-height: 1.875rem;
+}
+
+.card-description {
+    padding-left: 1.75rem;
+    font-size: .8125rem;
+    font-weight: 400;
+    color: var(--neutral-grayish-blue);
+    line-height: 1.4375rem;
+    letter-spacing: 0.0902778px;
+}
+
+.builder-wrapper, .karma-wrapper, .calculator-wrapper {
+    padding-bottom: 1.5625rem;
+    height: 222px;
+}
+
+.supervisor-wrapper {
+    border-top: solid .25rem var(--primary-cyan);
+    padding-bottom: 1.5625rem;
+    height: 222px;
+    border-radius: var(--br);
+    box-shadow: 0 4px 4px 0 var(--neutral-grayish-blue);
+
+}
 /*
 # Front-end Style Guide
 
