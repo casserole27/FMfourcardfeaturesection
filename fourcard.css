@@ -30,75 +30,126 @@ September 2022
 
 body {
     font-family: 'Poppins', sans-serif;
-    padding: 2rem;
-    margin-top: 5.3125rem;
-    width: 375px;
-    border: solid .25rem limegreen;
-    margin: 0 auto;
+    background-color: lightgray;
+}
+
+main { /* TODO container, don't put spacings on containers in order to reuse*/
+    background-color: white;
+    max-width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: solid .25rem limegreen; */
 }
 
 .headline-wrapper {
-    /*width: 311px;
-    height: 161px;*/
+    max-width: 311px;
+    /*height: 161px;*/
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: lightpink; */
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 24px;
+    line-height: 36px;
     font-weight: 200;
-    color: var(--neutral-grayish-blue);
     text-align: center;
-    line-height: 2rem;
+    color: var(--neutral-grayish-blue);
+    padding-top: 5.3125rem;
+    /* border: solid .25rem limegreen; */
 }
 
+
+
 h2 {
-    font-size: 1.5rem;
+    font-size: 24px;
+    line-height: 36px;
     font-weight: 600;
-    color: var(--neutral-very-dark-blue);
     text-align: center;
-    line-height: 2rem;
+    color: var(--neutral-very-dark-blue);
+    padding-top: 0.5rem;
+    /* border: solid .25rem limegreen; */
+
 }
 
 .description {
-    font-size: .9375rem;
+    font-size: 15px;
+    line-height: 25px;
     font-weight: 400;
-    color: var(--neutral-grayish-blue);
     text-align: center;
-    line-height: 1.5625rem;
+    color: var(--neutral-grayish-blue);
     padding-top: 1rem;
     padding-bottom: 4.75rem;
+    /* border: solid .25rem limegreen; */
+
+}
+
+ul {
+    list-style-type: none;
+    padding-bottom: 78px;
+}
+
+li {
+    max-width: 311px;
+    height: 222px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h3 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
     padding-top: 1.6875rem;
     padding-left: 1.75rem;
-    font-size: 1.25rem;
-    font-weight: 600;
     color: var(--neutral-very-dark-blue);
-    line-height: 1.875rem;
 }
 
 .card-description {
-    padding-left: 1.75rem;
-    font-size: .8125rem;
+    font-size: 13px;
+    line-height: 23px;
     font-weight: 400;
-    color: var(--neutral-grayish-blue);
-    line-height: 1.4375rem;
     letter-spacing: 0.0902778px;
-}
-
-.builder-wrapper, .karma-wrapper, .calculator-wrapper {
-    padding-bottom: 1.5625rem;
-    height: 222px;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    color: var(--neutral-grayish-blue);
 }
 
 .supervisor-wrapper {
     border-top: solid .25rem var(--primary-cyan);
-    padding-bottom: 1.5625rem;
-    height: 222px;
+    margin-bottom: 25px;
+    border-radius: var(--br);
+    box-shadow: 0 4px 4px 0 var(--neutral-grayish-blue);
+/* TODO x axis, y axis, blur radius, spread radius */
+}
+
+
+.builder-wrapper {
+    border-top: solid .25rem var(--primary-red);
+    margin-bottom: 25px;
     border-radius: var(--br);
     box-shadow: 0 4px 4px 0 var(--neutral-grayish-blue);
 
 }
+
+.karma-wrapper {
+    border-top: solid .25rem var(--primary-orange);
+    margin-bottom: 25px;
+    border-radius: var(--br);
+    box-shadow: 0 4px 4px 0 var(--neutral-grayish-blue);
+
+}
+
+.calculator-wrapper {
+    border-top: solid .25rem var(--primary-blue);
+    margin-bottom: 78px;
+    border-radius: var(--br);
+    box-shadow: 0 4px 4px 0 var(--neutral-grayish-blue);
+
+}
+
+
+
 /*
 # Front-end Style Guide
 
