@@ -30,28 +30,27 @@ September 2022
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: lightgray;
+    /* background-color: lightgray; */
+    display: flex;
     justify-content: center;
 }
 
 main { /* TODO container, don't put spacings on containers in order to reuse*/
     background-color: white;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    border: solid .25rem limegreen;
+    /* border: solid .25rem limegreen; */
     min-width: 375px;
     max-width: 1440px;
+    padding-bottom: 78px;
+
     /*! GRID TEST DESIGN*/
     display: grid;
     grid-template-columns: minmax(2rem, 350px) minmax(311px, 350px) minmax(2rem, 350px);
-    grid-template-rows: minmax(161px, 168px) minmax(222px, 250px) minmax(222px, 250px) minmax(222px, 250px) minmax(222px, 250px) minmax(222px, 250px)
- }
+    grid-template-rows: 18rem minmax(222px, 250px) minmax(222px, 250px) minmax(222px, 250px) minmax(222px, 250px);
+    row-gap: 2rem;    
+}
 
 .headline-wrapper {
     min-width: 311px;
-    /*height: 161px;*/
-    margin-left: auto;
-    margin-right: auto;
     grid-row: 1;
     grid-column: 2;
 }
@@ -62,8 +61,8 @@ h1 {
     font-weight: 200;
     text-align: center;
     color: var(--neutral-grayish-blue);
-    /* padding-top: 5.3125rem; */
-    border: solid .25rem limegreen;
+    padding-top: 5.3125rem;
+    /* border: solid .25rem limegreen; */
 }
 
 h2 {
@@ -72,9 +71,8 @@ h2 {
     font-weight: 600;
     text-align: center;
     color: var(--neutral-very-dark-blue);
-    /* padding-top: 0.5rem; */
-    border: solid .25rem limegreen;
-
+    padding-top: 0.25rem;
+    /* border: solid .25rem limegreen; */
 }
 
 .description {
@@ -83,23 +81,15 @@ h2 {
     font-weight: 400;
     text-align: center;
     color: var(--neutral-grayish-blue);
-    /* padding-top: 1rem; */
-    /* padding-bottom: 4.75rem; */
-    border: solid .25rem limegreen;
+    padding-top: 1rem;
+    padding-bottom: 4.75rem;
+    /* border: solid .25rem limegreen; */
 }
 
-ul {
-    list-style-type: none;
-    /* padding-bottom: 78px; */
-    grid-column: 2;
-}
+div {
+    display: block;
+    width: 100%;
 
-li {
-    min-width: 311px;  
-    min-height: 222px;  
-    
-    /* margin-left: auto; */
-    /* margin-right: auto; */
 }
 
 h3 {
@@ -126,15 +116,15 @@ h3 {
 }
 
 .supervisor-wrapper {
+    grid-column: 2;
+    grid-row: 2;
     display: grid;
     grid-template-columns: 1fr 75px;
     grid-template-rows: .5fr 1fr 1fr;
     border-top: solid .25rem var(--primary-cyan);
-    /* margin-bottom: 25px; */
     border-radius: var(--br);
     box-shadow: 0 4px 4px 0 var(--neutral-grayish-blue);
 /* TODO x axis, y axis, blur radius, spread radius */
-    grid-row: 2;
 }
 
 img {
@@ -144,36 +134,36 @@ img {
 
 
 .builder-wrapper {
+    grid-column: 2;
+    grid-row: 3;
     display: grid;
     grid-template-columns: 1fr 75px;
     grid-template-rows: .5fr 1fr 1fr;
     border-top: solid .25rem var(--primary-red);
-    /* margin-bottom: 25px; */
     border-radius: var(--br);
     box-shadow: 0 4px 4px 0 var(--neutral-grayish-blue);
-    grid-row: 3;
-
 }
 
 .karma-wrapper {
+    grid-column: 2;
+    grid-row: 4;
     display: grid;
     grid-template-columns: 1fr 75px;
     grid-template-rows: .5fr 1fr 1fr;
     border-top: solid .25rem var(--primary-orange);
-    /* margin-bottom: 25px; */
     border-radius: var(--br);
     box-shadow: 0 4px 4px 0 var(--neutral-grayish-blue);
-    grid-row: 4;
 }
 
 .calculator-wrapper {
+    grid-column: 2;
+    grid-row: 5;
     display: grid;
     grid-template-columns: 1fr 75px;
     grid-template-rows: .5fr 1fr 1fr;
     border-top: solid .25rem var(--primary-blue);
     border-radius: var(--br);
     box-shadow: 0 4px 4px 0 var(--neutral-grayish-blue);
-    grid-row: 5;
 }
 
 
