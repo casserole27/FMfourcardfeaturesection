@@ -30,30 +30,18 @@ September 2022
 
 body {
     font-family: 'Poppins', sans-serif;
-    /* background-color: lightgray; */
     display: flex;
     justify-content: center;
 }
 
 main { /* TODO container, don't put spacings on containers in order to reuse*/
     background-color: white;
-    /* border: solid .25rem limegreen; */
     min-width: 375px;
     max-width: 1440px;
-    padding-bottom: 78px;
-
-    /*! GRID TEST DESIGN*/
-    display: grid;
-    grid-template-columns: minmax(2rem, 350px) minmax(311px, 350px) minmax(2rem, 350px);
-    grid-template-rows: 18rem minmax(222px, 250px) minmax(222px, 250px) minmax(222px, 250px) minmax(222px, 250px);
-    row-gap: 2rem;    
+    padding-bottom: 78px; /*? Can I use this? */
+    /* border: solid .25rem limegreen; */
 }
 
-.headline-wrapper {
-    min-width: 311px;
-    grid-row: 1;
-    grid-column: 2;
-}
 
 h1 {
     font-size: 24px;
@@ -82,15 +70,39 @@ h2 {
     text-align: center;
     color: var(--neutral-grayish-blue);
     padding-top: 1rem;
-    padding-bottom: 4.75rem;
+    padding-bottom: 2.75rem;
     /* border: solid .25rem limegreen; */
 }
 
-div {
+/******* HEADLINE CONTAINER *******/
+/* TODO this is a div that exists outside of the grid */
+
+.headline-wrapper {
+    max-width: 540px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    /* border: solid .25rem limegreen; */
+}
+
+/******* GRID CONTAINER *******/
+
+.grid-wrapper {
+    /*! GRID TEST DESIGN*/
+    display: grid;
+    grid-template-columns: minmax(2rem, 350px) minmax(311px, 350px) minmax(2rem, 350px);
+    row-gap: 2rem;      
+}
+
+/****** GRID SIZING FOR CHILD ELEMENTS ******/
+
+.supervisor-wrapper, .builder-wrapper, .karma-wrapper, .calculator-wrapper {
     display: block;
     width: 100%;
-
+    min-height: 250px;
 }
+
+/****** CARD STYLING ******/
 
 h3 {
     font-size: 20px;
@@ -115,6 +127,8 @@ h3 {
     grid-column: 1 / -1;
 }
 
+/******* CARD GRIDS AND STYLING ******/
+
 .supervisor-wrapper {
     grid-column: 2;
     grid-row: 2;
@@ -125,11 +139,6 @@ h3 {
     border-radius: var(--br);
     box-shadow: 0 4px 4px 0 var(--neutral-grayish-blue);
 /* TODO x axis, y axis, blur radius, spread radius */
-}
-
-img {
-    grid-row: 3;
-    grid-column: 2;
 }
 
 
@@ -166,7 +175,39 @@ img {
     box-shadow: 0 4px 4px 0 var(--neutral-grayish-blue);
 }
 
+img {
+    grid-row: 3;
+    grid-column: 2;
+}
 
+/****** MEDIA QUERIES ******/
+
+@media screen and (min-width: 1000px) {
+
+    .grid-wrapper {
+        column-gap: 2rem;
+        row-gap: 1rem;
+        grid-template-rows: repeat(4, 125px);
+    }
+
+    .supervisor-wrapper {
+        grid-column: 1;
+        grid-row: 2 / 3;
+    }
+
+    .builder-wrapper {
+        grid-row: 1;
+    }
+
+    .karma-wrapper {
+        grid-row: 3 / 4;
+    }
+
+    .calculator-wrapper {
+        grid-column: 3;
+        grid-row: 2 / 3;
+    }
+}
 
 /*
 # Front-end Style Guide
