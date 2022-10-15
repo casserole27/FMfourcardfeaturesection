@@ -22,7 +22,12 @@ September 2022
 --neutral-very-light-gray: hsl(0, 0%, 98%);
 
 --br: border-radius: 1rem; 
---font-size: font-size: 15px; 
+
+--fs-xs: .8125rem; /*? 13px; */
+--fs-s: 1rem; /*? 16px */
+--fs-m: 1.25rem; /*? 20px */
+--fs-l: 1.5rem; /*? 24px grows to 36px / 2rem */
+
 }
 
 /****** MOBILE-FIRST DESIGN ******/
@@ -44,7 +49,7 @@ main { /* TODO container, don't put spacings on containers in order to reuse*/
 
 
 h1 {
-    font-size: 24px;
+    font-size: var(--fs-l);
     line-height: 36px;
     font-weight: 200;
     text-align: center;
@@ -54,7 +59,7 @@ h1 {
 }
 
 h2 {
-    font-size: 24px;
+    font-size: var(--fs-l);
     line-height: 36px;
     font-weight: 600;
     text-align: center;
@@ -64,7 +69,7 @@ h2 {
 }
 
 .description {
-    font-size: 15px;
+    font-size: var(--fs-s);
     line-height: 25px;
     font-weight: 400;
     text-align: center;
@@ -99,13 +104,13 @@ h2 {
 .supervisor-wrapper, .builder-wrapper, .karma-wrapper, .calculator-wrapper {
     display: block;
     width: 100%;
-    min-height: 250px;
+    height: max(250px, 222px);
 }
 
 /****** CARD STYLING ******/
 
 h3 {
-    font-size: 20px;
+    font-size: var(--fs-m);
     line-height: 30px;
     font-weight: 600;
     padding-top: 1.6875rem;
@@ -116,7 +121,7 @@ h3 {
 }
 
 .card-description {
-    font-size: 13px;
+    font-size: var(--fs-xs);
     line-height: 23px;
     font-weight: 400;
     letter-spacing: 0.0902778px;
@@ -183,6 +188,10 @@ img {
 /****** MEDIA QUERIES ******/
 
 @media screen and (min-width: 1000px) {
+
+    :root {
+        --fs-l: 2rem;
+    }
 
     .grid-wrapper {
         column-gap: 2rem;
