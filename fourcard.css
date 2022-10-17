@@ -21,7 +21,7 @@ September 2022
 --neutral-grayish-blue: hsl(229, 6%, 66%);
 --neutral-very-light-gray: hsl(0, 0%, 98%);
 
---br: border-radius: 1rem; 
+--br: .5rem; 
 
 --fs-xs: .8125rem; /*? 13px; */
 --fs-s: 1rem; /*? 16px */
@@ -80,8 +80,8 @@ h2 {
 }
 
 /******* HEADLINE CONTAINER *******/
-/* TODO this is a div that exists outside of the grid */
 
+/* TODO this is a div that exists outside of the grid */
 .headline-wrapper {
     max-width: 540px;
     margin: 0 auto;
@@ -103,11 +103,19 @@ h2 {
 
 .supervisor-wrapper, .builder-wrapper, .karma-wrapper, .calculator-wrapper {
     display: block;
-    width: 100%;
-    height: max(250px, 222px);
+    width: 311px;
+    height: 222px;
 }
 
-/****** CARD STYLING ******/
+@media screen and (min-width: 1100px) {
+    .supervisor-wrapper, .builder-wrapper, .karma-wrapper, .calculator-wrapper {
+        width: 350px;
+        height: 250px;
+    }
+
+}
+
+/****** CARD FONT STYLING ******/
 
 h3 {
     font-size: var(--fs-m);
@@ -132,7 +140,7 @@ h3 {
     grid-column: 1 / -1;
 }
 
-/******* CARD GRIDS AND STYLING ******/
+/******* CARD STYLING AND GRIDS ******/
 
 .supervisor-wrapper {
     grid-column: 2;
@@ -140,12 +148,11 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 75px;
     grid-template-rows: .5fr 1fr 1fr;
-    border-top: solid .25rem var(--primary-cyan);
     border-radius: var(--br);
-    box-shadow: 0 4px 4px 0 var(--neutral-grayish-blue);
+    border-top: solid .25rem var(--primary-cyan);
+    box-shadow: 0px .25rem 2rem 0px rgba(0, 0, 0, 0.15);
 /* TODO x axis, y axis, blur radius, spread radius */
 }
-
 
 .builder-wrapper {
     grid-column: 2;
@@ -155,7 +162,7 @@ h3 {
     grid-template-rows: .5fr 1fr 1fr;
     border-top: solid .25rem var(--primary-red);
     border-radius: var(--br);
-    box-shadow: 0 4px 4px 0 var(--neutral-grayish-blue);
+    box-shadow: 0px .25rem 2rem 0px rgba(0, 0, 0, 0.15);
 }
 
 .karma-wrapper {
@@ -166,7 +173,7 @@ h3 {
     grid-template-rows: .5fr 1fr 1fr;
     border-top: solid .25rem var(--primary-orange);
     border-radius: var(--br);
-    box-shadow: 0 4px 4px 0 var(--neutral-grayish-blue);
+    box-shadow: 0px .25rem 2rem 0px rgba(0, 0, 0, 0.15);
 }
 
 .calculator-wrapper {
@@ -177,7 +184,7 @@ h3 {
     grid-template-rows: .5fr 1fr 1fr;
     border-top: solid .25rem var(--primary-blue);
     border-radius: var(--br);
-    box-shadow: 0 4px 4px 0 var(--neutral-grayish-blue);
+    box-shadow: 0px .25rem 2rem 0px rgba(0, 0, 0, 0.15);
 }
 
 img {
@@ -187,7 +194,7 @@ img {
 
 /****** MEDIA QUERIES ******/
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
 
     :root {
         --fs-l: 2rem;
