@@ -13,7 +13,8 @@ September 2022
 --primary-blue: hsl(212, 86%, 64%);
 
 --neutral-very-dark-blue: hsl(234, 12%, 34%);
---neutral-grayish-blue: hsl(229, 6%, 66%);
+/* --neutral-grayish-blue: hsl(229, 6%, 66%); */ /*! Contrast too low via accessibility checker */
+--neutral-grayish-blue: #999;
 --neutral-very-light-gray: hsl(0, 0%, 98%);
 
 --br: .5rem; 
