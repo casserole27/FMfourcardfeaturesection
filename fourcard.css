@@ -6,11 +6,6 @@ clewisdev.com
 September 2022
 */
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
 :root {
 --primary-red: hsl(0, 78%, 62%);
 --primary-cyan: hsl(180, 62%, 55%);
@@ -27,11 +22,15 @@ September 2022
 --fs-s: 1rem; /*? 16px */
 --fs-m: 1.25rem; /*? 20px */
 --fs-l: 1.5rem; /*? 24px grows to 36px / 2rem */
-
 }
 
 /****** MOBILE-FIRST DESIGN ******/
 /****** GLOBAL STYLING ******/
+
+* {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -43,40 +42,37 @@ main { /* TODO container, don't put spacings on containers in order to reuse*/
     background-color: white;
     min-width: 375px;
     max-width: 1440px;
-    padding-bottom: 78px; /*? Can I use this? */
-    /* border: solid .25rem limegreen; */
+    padding-bottom: 4.875rem;
 }
 
+/****** HEADLINE TEXT STYLING ******/
 
 h1 {
     font-size: var(--fs-l);
-    line-height: 36px;
+    line-height: 2rem;
     font-weight: 200;
     text-align: center;
     color: var(--neutral-grayish-blue);
     padding-top: 5.3125rem;
-    /* border: solid .25rem limegreen; */
 }
 
 h2 {
     font-size: var(--fs-l);
-    line-height: 36px;
+    line-height: 2rem;
     font-weight: 600;
     text-align: center;
     color: var(--neutral-very-dark-blue);
     padding-top: 0.25rem;
-    /* border: solid .25rem limegreen; */
 }
 
 .description {
     font-size: var(--fs-s);
-    line-height: 25px;
+    line-height: 1.5625rem;
     font-weight: 400;
     text-align: center;
     color: var(--neutral-grayish-blue);
     padding-top: 1rem;
     padding-bottom: 2.75rem;
-    /* border: solid .25rem limegreen; */
 }
 
 /******* HEADLINE CONTAINER *******/
@@ -87,13 +83,12 @@ h2 {
     margin: 0 auto;
     padding-left: 2rem;
     padding-right: 2rem;
-    /* border: solid .25rem limegreen; */
 }
 
 /******* GRID CONTAINER *******/
 
 .grid-wrapper {
-    /*! GRID TEST DESIGN*/
+    /*! GRID DESIGN*/
     display: grid;
     grid-template-columns: minmax(2rem, 350px) minmax(311px, 350px) minmax(2rem, 350px);
     row-gap: 2rem;      
@@ -115,11 +110,11 @@ h2 {
 
 }
 
-/****** CARD FONT STYLING ******/
+/****** CARD TEXT STYLING ******/
 
 h3 {
     font-size: var(--fs-m);
-    line-height: 30px;
+    line-height: 1.875rem;
     font-weight: 600;
     padding-top: 1.6875rem;
     padding-left: 1.75rem;
@@ -130,7 +125,7 @@ h3 {
 
 .card-description {
     font-size: var(--fs-xs);
-    line-height: 23px;
+    line-height: 1.4375rem;
     font-weight: 400;
     letter-spacing: 0.0902778px;
     padding-left: 1.75rem;
@@ -192,7 +187,7 @@ img {
     grid-column: 2;
 }
 
-/****** MEDIA QUERIES ******/
+/****** DESKTOP DESIGN - MEDIA QUERIES ******/
 
 @media screen and (min-width: 1200px) {
 
