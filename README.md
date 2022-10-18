@@ -1,91 +1,196 @@
-# Frontend Mentor - Four card feature section
+# Frontend Mentor - Four card feature section solution
 
-![Design preview for the Four card feature section coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Four card feature section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/four-card-feature-section-weK1eFYK). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+A "four card" design provided by Frontend Mentor.
 
-## The challenge
+### The challenge
 
-Your challenge is to build out this feature section and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should:
+Users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![](/design/mymobile.png)
+![](/design/mydesktop.png)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### Links
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+- Solution URL: [solution URL](https://your-solution-url.com)
+- Live Site URL: [live site](https://www.clewisdev.com/FMfourcardfeaturesection/)
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+## My process
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+Setup basic HTML file 
+- insert my personal comment credit
+- <head> tag includes stylesheet/link and fonts, double check for meta viewport tag
+- initial semantic, accessible markup: placing main, heading and paragraph tags
+ - commit and push
+Setup basic CSS file
+- insert my personal comment credit
+- copy style guide into file as comments
+- decide on mobile or desktop-first design based on design file examples
+- create *, root, and body selectors: margin/padding to 0, setup for variables, add font-family
+- decide on which variables to use
+- commit and push
+Consult Figma design files
+ - adjust text properties: size, line height, color
+ - insert images and color properties
+ - decide on layout tools and markup accordingly
+ - add effects: borders, box shadows, etc
+ - commit and push after each major change
+Check markup and accessibility
+(https://validator.w3.org/)
+(https://wave.webaim.org/)
+ - make adjustments as necessary
+ - commit and push
+ - live URL
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
 
-## Building your project
+### Built with
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+### What I learned
 
-## Deploying your project
+This was my first FrontEnd Mentor PRO project where I had access to the Figma design files. This is so much easier than trying to guess how everything looks! I have to admit I think that I did a good job copying the designs without these files, it's just more time consuming doing the guesswork. 
+Since I had exact units for all the components of the design, I concentrated on precision.
+I also took a lot of time to refine my knowledge of CSS grid and make responsiveness more seamless. 
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+Code that I'm proud of:
+I did a small grid within the larger grid to achieve the individual layouts of the cards
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+```css
+.supervisor-wrapper {
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 75px;
+    grid-template-rows: .5fr 1fr 1fr;
+    border-radius: var(--br);
+    border-top: solid .25rem var(--primary-cyan);
+    box-shadow: 0px .25rem 2rem 0px rgba(0, 0, 0, 0.15);
+}
+```
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+I did not need that many lines of code to transition between the mobile and desktop designs. I'm very interested in a less clunky transition between screens and I think I am on my way to achieving this with this design. This below media query is all that was needed, and I placed an additional breakpoint of 1200px elsewhere in the cascade so that the design would look good on mobiles, tablets, and desktops. 
 
-## Create a custom `README.md`
+```css
+@media screen and (min-width: 1080px) {
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+    :root {
+        --fs-l: 2.25rem;
+    }
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+    .grid-wrapper {
+        column-gap: 2rem;
+        row-gap: 1rem;
+        grid-template-rows: repeat(4, 125px);
+        justify-items: center;
+    }
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+    .supervisor-wrapper {
+        grid-column: 1;
+        grid-row: 2 / 3;
+        
+    }
 
-## Submitting your solution
+    .builder-wrapper {
+        grid-row: 1;
+    }
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+    .karma-wrapper {
+        grid-row: 3 / 4;
+    }
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+    .calculator-wrapper {
+        grid-column: 3;
+        grid-row: 2 / 3;
+    }
+}
+```
+### Continued development
 
-## Sharing your solution
+With the precise measurements given by the Figma files, I am a bit confused about what sizing to use where. It seems that grid is really good at making sizing work for different viewports AUTOMATICALLY, but I simply could not figure out how to achieve the sizing provided in the design files without using specific pixels. I tried several different things such as sizing the grid, using min/max widths, and min(), max(), and clamp(). When trying to establish a minimum and maximum size, it never seems to get to the min size and always holds on to the max, even with minmax in the grid sizing.
+Do you put the size on the grid, or the size on the grid elements? Is the specificity making it wonky? I have both going on and I don't know what is best practice or how to make this easier. I also have specific sizing on my main selector.
+The design DOES work, but is there a better way?
 
-There are multiple places you can share your solution:
+```css
+/******* GRID CONTAINER *******/
 
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+.grid-wrapper {
+    /*! GRID DESIGN*/
+    display: grid;
+    grid-template-columns: minmax(2rem, 350px) minmax(311px, 350px) minmax(2rem, 350px);
+    row-gap: 2rem;      
+}
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+/****** GRID SIZING FOR CHILD ELEMENTS ******/
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+.supervisor-wrapper, .builder-wrapper, .karma-wrapper, .calculator-wrapper {
+    display: block;
+    width: 311px;
+    height: 222px;
+}
 
-## Got feedback for us?
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+@media screen and (min-width: 1200px) {
+    .supervisor-wrapper, .builder-wrapper, .karma-wrapper, .calculator-wrapper {
+        width: 350px;
+        height: 250px;
+    }
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+}
+```
+```css
+main { 
+    background-color: white;
+    min-width: 375px;
+    max-width: 1440px;
+    padding-bottom: 4.875rem;
+}
+```
 
-**Have fun building!** 🚀
+Finally, after running markup and accessibility checkups, I made my own tweaks to the design. The provided colors did not give a proper contrast ratio for accessibility, so I changed these to darker blue/gray colors. I then made one of the headlines red for more visual interest. 
+
+### Useful resources
+
+Kevin Powell YouTube videos:
+- [Learn CSS Grid the Easy Way](https://www.youtube.com/watch?v=rg7Fvvl3taU) 
+- [Learn How to Create a Responsive CSS grid layout](https://www.youtube.com/watch?v=sKFW3wek21Q&list=PL4-IK0AVhVjPv5tfS82UF_iQgFp4Bl998&index=14) 
+- [min(), max(), and clamp() are CSS magic!](https://www.youtube.com/watch?v=U9VF-4euyRo&list=PL4-IK0AVhVjODqX-gN6KH68Tt_zrYiTwA&index=3)
+
+
+## Author
+
+- Website - [C Lewis](https://www.clewisdev.com)
+- Frontend Mentor - [@casserole27](https://www.frontendmentor.io/profile/casserole27)
+- LinkedIn - (https://www.linkedin.com/in/clewisdev/)
+
+
+## Acknowledgments
+
+[Kevin Powell's YouTube channel](https://www.youtube.com/kepowob)
+
+
