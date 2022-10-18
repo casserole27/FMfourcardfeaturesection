@@ -186,7 +186,7 @@ Kevin Powell YouTube videos:
 
 - Website - [C Lewis](https://www.clewisdev.com)
 - Frontend Mentor - [@casserole27](https://www.frontendmentor.io/profile/casserole27)
-- LinkedIn - (https://www.linkedin.com/in/clewisdev/)
+- LinkedIn - [LinkedIn](https://www.linkedin.com/in/clewisdev/)
 
 
 ## Acknowledgments
