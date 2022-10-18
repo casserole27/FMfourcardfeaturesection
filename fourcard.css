@@ -12,17 +12,17 @@ September 2022
 --primary-orange: hsl(34, 97%, 64%);
 --primary-blue: hsl(212, 86%, 64%);
 
---neutral-very-dark-blue: #17205e;
+--neutral-very-dark-blue: hsl(232, 61%, 23%);
 /* --neutral-grayish-blue: hsl(229, 6%, 66%); */ /*! Contrast too low via accessibility checker */
---neutral-grayish-blue: #425292;
+--neutral-grayish-blue: hsl(228, 38%, 42%);
 --neutral-very-light-gray: hsl(0, 0%, 98%);
 
 --br: .5rem; 
 
---fs-xs: .8125rem; /*? 13px; */
---fs-s: 1rem; /*? 16px */
---fs-m: 1.25rem; /*? 20px */
---fs-l: 1.5rem; /*? 24px grows to 36px / 2rem */
+--fs-xs: .8125em; /*? 13px; */
+--fs-s: 1em; /*? 16px */
+--fs-m: 1.25em; /*? 20px */
+--fs-l: 1.5em; /*? 24px grows to 36px / 2rem */
 }
 
 /****** MOBILE-FIRST DESIGN ******/
@@ -39,7 +39,7 @@ body {
     justify-content: center;
 }
 
-main { /* TODO container, don't put spacings on containers in order to reuse*/
+main { 
     background-color: white;
     min-width: 375px;
     max-width: 1440px;
@@ -79,9 +79,8 @@ h2 {
     text-align: center;
     color: var(--neutral-grayish-blue);
     padding-top: 1.5rem;
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
 }
-
 
 
 /******* HEADLINE CONTAINER *******/
@@ -111,13 +110,15 @@ h2 {
     height: 222px;
 }
 
-@media screen and (min-width: 1100px) {
+
+@media screen and (min-width: 1200px) {
     .supervisor-wrapper, .builder-wrapper, .karma-wrapper, .calculator-wrapper {
         width: 350px;
         height: 250px;
     }
 
 }
+
 
 /****** CARD TEXT STYLING ******/
 
@@ -198,21 +199,23 @@ img {
 
 /****** DESKTOP DESIGN - MEDIA QUERIES ******/
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1080px) {
 
     :root {
-        --fs-l: 2rem;
+        --fs-l: 2.25rem;
     }
 
     .grid-wrapper {
         column-gap: 2rem;
         row-gap: 1rem;
         grid-template-rows: repeat(4, 125px);
+        justify-items: center;
     }
 
     .supervisor-wrapper {
         grid-column: 1;
         grid-row: 2 / 3;
+        
     }
 
     .builder-wrapper {

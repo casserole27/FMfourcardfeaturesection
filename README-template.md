@@ -16,9 +16,9 @@ This is a solution to the [Four card feature section challenge on Frontend Mento
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
+
+A "four card" design provided by Frontend Mentor.
 
 ### The challenge
 
@@ -28,32 +28,40 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](/design/mymobile.png)
+![](/design/mydesktop.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution URL](https://your-solution-url.com)
+- Live Site URL: [live site](https://www.clewisdev.com/FMfourcardfeaturesection/)
 
 ## My process
 
-Setup HTML file 
+Setup basic HTML file 
 - insert my personal comment credit
 - <head> tag includes stylesheet/link and fonts, double check for meta viewport tag
 - initial semantic, accessible markup: placing main, heading and paragraph tags
-Setup CSS file
+ - commit and push
+Setup basic CSS file
 - insert my personal comment credit
 - copy style guide into file as comments
 - decide on mobile or desktop-first design based on design file examples
 - create *, root, and body selectors: margin/padding to 0, setup for variables, add font-family
+- decide on which variables to use
+- commit and push
+Consult Figma design files
+ - adjust text properties: size, line height, color
+ - insert images and color properties
+ - decide on layout tools and markup accordingly
+ - add effects: borders, box shadows, etc
+ - commit and push after each major change
+Check markup and accessibility
+(https://validator.w3.org/)
+(https://wave.webaim.org/)
+ - make adjustments as necessary
+ - commit and push
+ - live URL
 
 
 ### Built with
@@ -63,59 +71,126 @@ Setup CSS file
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This was my first FrontEnd Mentor PRO project where I had access to the Figma design files. This is so much easier than trying to guess how everything looks! I have to admit I think that I did a good job copying the designs without these files, it's just more time consuming doing the guesswork. 
+Since I had exact units for all the components of the design, I concentrated on precision.
+I also took a lot of time to refine my knowledge of CSS grid and make responsiveness more seamless. 
 
-To see how you can add code snippets, see below:
+Code that I'm proud of:
+I did a small grid within the larger grid to achieve the individual layouts of the cards
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.supervisor-wrapper {
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 75px;
+    grid-template-rows: .5fr 1fr 1fr;
+    border-radius: var(--br);
+    border-top: solid .25rem var(--primary-cyan);
+    box-shadow: 0px .25rem 2rem 0px rgba(0, 0, 0, 0.15);
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+
+I did not need that many lines of code to transition between the mobile and desktop designs. I'm very interested in a less clunky transition between screens and I think I am on my way to achieving this with this design. This below media query is all that was needed, and I placed an additional breakpoint of 1200px elsewhere in the cascade so that the design would look good on mobiles, tablets, and desktops. 
+
+```css
+@media screen and (min-width: 1080px) {
+
+    :root {
+        --fs-l: 2.25rem;
+    }
+
+    .grid-wrapper {
+        column-gap: 2rem;
+        row-gap: 1rem;
+        grid-template-rows: repeat(4, 125px);
+        justify-items: center;
+    }
+
+    .supervisor-wrapper {
+        grid-column: 1;
+        grid-row: 2 / 3;
+        
+    }
+
+    .builder-wrapper {
+        grid-row: 1;
+    }
+
+    .karma-wrapper {
+        grid-row: 3 / 4;
+    }
+
+    .calculator-wrapper {
+        grid-column: 3;
+        grid-row: 2 / 3;
+    }
 }
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+With the precise measurements given by the Figma files, I am a bit confused about what sizing to use where. It seems that grid is really good at making sizing work for different viewports AUTOMATICALLY, but I simply could not figure out how to achieve the sizing provided in the design files without using specific pixels. I tried several different things such as sizing the grid, using min/max widths, and min(), max(), and clamp(). When trying to establish a minimum and maximum size, it never seems to get to the min size and always holds on to the max, even with minmax in the grid sizing.
+Do you put the size on the grid, or the size on the grid elements? Is the specificity making it wonky? I have both going on and I don't know what is best practice or how to make this easier. I also have specific sizing on my main selector.
+The design DOES work, but is there a better way?
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+```css
+/******* GRID CONTAINER *******/
+
+.grid-wrapper {
+    /*! GRID DESIGN*/
+    display: grid;
+    grid-template-columns: minmax(2rem, 350px) minmax(311px, 350px) minmax(2rem, 350px);
+    row-gap: 2rem;      
+}
+
+/****** GRID SIZING FOR CHILD ELEMENTS ******/
+
+.supervisor-wrapper, .builder-wrapper, .karma-wrapper, .calculator-wrapper {
+    display: block;
+    width: 311px;
+    height: 222px;
+}
+
+
+@media screen and (min-width: 1200px) {
+    .supervisor-wrapper, .builder-wrapper, .karma-wrapper, .calculator-wrapper {
+        width: 350px;
+        height: 250px;
+    }
+
+}
+```
+```css
+main { 
+    background-color: white;
+    min-width: 375px;
+    max-width: 1440px;
+    padding-bottom: 4.875rem;
+}
+```
+
+Finally, after running markup and accessibility checkups, I made my own tweaks to the design. The provided colors did not give a proper contrast ratio for accessibility, so I changed these to darker blue/gray colors. I then made one of the headlines red for more visual interest. 
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+Kevin Powell YouTube videos:
+- [Learn CSS Grid the Easy Way](https://www.youtube.com/watch?v=rg7Fvvl3taU) 
+- [Learn How to Create a Responsive CSS grid layout](https://www.youtube.com/watch?v=sKFW3wek21Q&list=PL4-IK0AVhVjPv5tfS82UF_iQgFp4Bl998&index=14) 
+- [min(), max(), and clamp() are CSS magic!](https://www.youtube.com/watch?v=U9VF-4euyRo&list=PL4-IK0AVhVjODqX-gN6KH68Tt_zrYiTwA&index=3)
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [C Lewis](https://www.clewisdev.com)
+- Frontend Mentor - [@casserole27](https://www.frontendmentor.io/profile/casserole27)
+- LinkedIn - (https://www.linkedin.com/in/clewisdev/)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+[Kevin Powell's YouTube channel](https://www.youtube.com/kepowob)
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+
