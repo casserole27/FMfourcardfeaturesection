@@ -12,9 +12,9 @@ September 2022
 --primary-orange: hsl(34, 97%, 64%);
 --primary-blue: hsl(212, 86%, 64%);
 
---neutral-very-dark-blue: hsl(234, 12%, 34%);
+--neutral-very-dark-blue: #17205e;
 /* --neutral-grayish-blue: hsl(229, 6%, 66%); */ /*! Contrast too low via accessibility checker */
---neutral-grayish-blue: #999;
+--neutral-grayish-blue: #425292;
 --neutral-very-light-gray: hsl(0, 0%, 98%);
 
 --br: .5rem; 
@@ -62,8 +62,14 @@ h2 {
     line-height: 2rem;
     font-weight: 600;
     text-align: center;
-    color: var(--neutral-very-dark-blue);
-    padding-top: 0.25rem;
+    color: var(--primary-red); 
+    /*! I changed the color of this headline to the "primary red". 
+    /* ! The colors of the lighter-colored "neutral grayish blue" text
+    /*! needed to be changed due to accessibility issues in contrast.
+    /*! By making them a darker "neutral grayish blue,"
+    /*! I felt that more visual interest needed to be added to the text. */
+    /* color: var(--neutral-very-dark-blue); */
+    padding-top: 1rem;
 }
 
 .description {
@@ -72,9 +78,11 @@ h2 {
     font-weight: 400;
     text-align: center;
     color: var(--neutral-grayish-blue);
-    padding-top: 1rem;
-    padding-bottom: 2.75rem;
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
 }
+
+
 
 /******* HEADLINE CONTAINER *******/
 
